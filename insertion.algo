@@ -1,15 +1,16 @@
 //PROCEDURE Sort_insertion(VAR tab : ARRAY_OF INTEGER)
 FUNCTION Sort_insertion(VAR tab : ARRAY_OF INTEGER) : ARRAY_OF INTEGER
 VAR
-    i,j,n : INTEGER;
+    i,j,n,x : INTEGER;
 BEGIN
     n := tab.length;
     FOR i FROM 1 TO n-1 STEP 1  DO
+        x := tab[i] ;
         j:=i-1;
         WHILE (j>=0) DO
-            IF (tab[j]>tab[i]) THEN
+            IF (tab[j]>x) THEN
                 tab[j+1]:= tab[j];
-                tab[j]:=tab[i];
+                tab[j]:=x;
             END_IF
             j:=j-1;
         END_WHILE
